@@ -22,7 +22,7 @@ public class RetanguloTeste {
     }
 
     @Test
-    @DisplayName("Deve criar um objeto conta")
+    @DisplayName("Deve criar um objeto Retangulo")
     public void criarObjetoRetangulo() {
         assertNotNull(retangulo);
     }
@@ -34,6 +34,12 @@ public class RetanguloTeste {
     }
 
     @Test
+    public void construtorRetanguloAlturaBase() {
+        assertEquals(2.0, retangulo.getAltura());
+        assertEquals(3.0, retangulo.getBase());
+    }
+
+    @Test
     public void metodoCriarComAlturaBase() {
         Retangulo retangulo = Retangulo.criarComBaseAltura(4.0,8.0);
 
@@ -42,25 +48,8 @@ public class RetanguloTeste {
     }
 
     @Test
-    public void construtorRetanguloAlturaBase() {
-        assertEquals(2.0, retangulo.getAltura());
-        assertEquals(3.0, retangulo.getBase());
-    }
-
-    @Test
-    public void metodoCalcularAreaRetangulo() {
-        assertEquals(6.0, retangulo.calcularArea());
-    }
-
-    @Test
-    public void metodoCalcularPerimetroRetangulo() {
-        assertEquals(10.0, retangulo.calcularPerimetro());
-    }
-
-    @Test
-    public void metodoSetBaseValorValido4() throws IllegalAccessException {
+    public void metodoSetBaseValorValido4() {
         retangulo.setBase(4.0);
-
         assertEquals(4.0, retangulo.getBase());
     }
 
@@ -82,9 +71,8 @@ public class RetanguloTeste {
     }
 
     @Test
-    public void metodoSetAlturaValorValido4() throws IllegalAccessException {
+    public void metodoSetAlturaValorValido4() {
         retangulo.setAltura(4.0);
-
         assertEquals(4.0, retangulo.getAltura());
     }
 
@@ -103,5 +91,15 @@ public class RetanguloTeste {
     @Test
     public void metodoGetAltura() {
         assertEquals(2.0, retangulo.getAltura());
+    }
+
+    @Test
+    public void metodoCalcularAreaRetangulo() {
+        assertEquals(6.0, retangulo.calcularArea());
+    }
+
+    @Test
+    public void metodoCalcularPerimetroRetangulo() {
+        assertEquals(10.0, retangulo.calcularPerimetro());
     }
 }
